@@ -1,0 +1,37 @@
+
+  {% set expanded = "false" %}
+{% if nav_item.active %}
+  {% set class = "active" %}
+  {% set collapse ="collapse in" %}
+  {% set expanded = "true" %}
+{% endif %}
+
+{% if nav_item.children %}
+    <li>
+        <a class="has-arrow {{ class }}" href="#"  aria-expanded="{{ expanded }}" >
+                {{ nav_item.title }}
+        </a>
+        <ul aria-expanded="{{ expanded }}" class="{{class}} {{collapse}}">
+                {% set base = path %}
+                {% for nav_item in nav_item.children %}
+                  {% set path = base + "-" + loop.index | string %}
+                  {% set level = level + 1 %}
+                  {% include "partials/nav-item.html"  %}
+                {% endfor %}
+        </ul>
+    </li>
+
+{% elif nav_item == page %}
+    <li>
+        <a class="{{ class }}"  href="{{ nav_item.url | url }}" title="{{ nav_item.title }}"  aria-link>
+                {{ nav_item.title }}
+        </a>
+    </li>
+
+{% else %}
+    <li class="{{ class }}">
+        <a href="{{ nav_item.url | url }}" title="{{ nav_item.title }}" class="md-nav__link" aria-link>
+          {{ nav_item.title }}
+        </a>
+      </li>
+{% endif %}

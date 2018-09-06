@@ -1,0 +1,28 @@
+site_name: 'Devs Stack' 
+theme:
+  language: zh
+  name: null
+  custom_dir: 'theme/'
+  feature:
+    tabs: true  
+
+pages:
+  - Welcome: index.md 
+  - Git: 
+    - 1_CentOS7中安装git: "git/1_CentOS7中安装git.md"
+    - 2_git和GitHub: "git/2_git和GitHub.md"
+    - 3_git工作区暂存区和版本库: "git/3_git工作区暂存区和版本库.md"
+    - 4_git使用基础篇: "git/4_git使用基础篇.md"
+    - 5_简明 Git 命令速查表（中文版）: "git/5_简明 Git 命令速查表（中文版）.md"
+    - 6_git仓库创建: "git/6_git仓库创建.md"
+    - 7_git分支管理: "git/7_git分支管理.md"
+    - 8_git工作流程: "git/8_git工作流程.md"
+    - 9_git工作常用命令: "git/9_git工作常用命令.md"
+    - 10_git标签: "git/10_git标签.md"
+    - 11_git服务器搭建: "git/11_git服务器搭建.md"
+    - Git处理 GitHub 不允许上传超过 100MB 文件的问题: "git/Git处理 GitHub 不允许上传超过 100MB 文件的问题.md"
+  - SVN: 
+    - 概要: "svn/index.md"
+
+plugins:
+    - search

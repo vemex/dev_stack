@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>{{ config.site_name }}</title>
+    <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/main.43fe2ee2b2e728c274f2.css' | url }}" />
+    <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/metisMenu.css' | url }}" />
+    <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/theme.css' | url }}" />
+
+</head>
+
+<body>
+    <div id="dashboard-app" class="fixed-header fixed-left-sider fixed-footer">
+        <header>
+            <div class="aside-header">
+                <div>
+                    <label class="text-light text-lg-center p-2"><h2> <a class="text-light text-lg-center p-2" href="{{ config.site_url | default(nav.homepage.url, true) | url }}" >{{ config.site_name }}</a></h2></label> 
+                </div>
+            </div>
+            <div class="header-bar">
+                <div data-v-a870e5a8="" class="d-flex justify-content-between">
+                        
+                    <div data-v-a870e5a8="" class="left-container">
+                      
+                    </div>
+                    <div data-v-a870e5a8="" class="right-container">
+                        <div  class="dropdown p-2">
+                                <input type="text" id="searchbox" placeholder="搜索" class="form-control">
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="dashboard-body">
+            <div class="aside-left" id="aside_left">
+                    {% include "partials/nav.html" %}
+            </div>
+            <main class="page">
+                <div class="page-title">
+                    <div class="breadcrumb"> <b>文章标题:&nbsp;&nbsp;&nbsp;&nbsp;  </b>{{ page.title }}</div>
+                </div>
+                <div class="page-content">
+                    <div class="page-content-body">
+                        <div class="page-content-body-scrollwrap">
+                            <div> 
+                                {{ page.content }}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Table of contents -->
+                    {% if page.toc %}
+                    <div class="page-content-sider" data-md-component="toc">
+                        <div class="page-content-sider-scrollwrap">
+                            <div>
+                                {% include "partials/toc.html" %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </main>
+        </div>
+        <footer>
+            <div>© 2008-2017, Nicety.io by WANGWEIWEI . All rights reserved. Version：v0.0.7
+            </div>
+        </footer>
+    </div>
+    <script src="{{ 'assets/javascripts/jquery.min.js' | url }}"></script>
+    <script src="{{ 'assets/javascripts/popper.min.js' | url }}"></script>
+    <script src="{{ 'assets/javascripts/bootstrap.min.js' | url }}"></script>
+    <script src="{{ 'assets/javascripts/metisMenu.js' | url }}"></script>
+    <script src="{{ 'assets/javascripts/lunr.js' | url }}"></script>
+    <script src="{{ 'assets/javascripts/theme.js' | url }}"></script>
+</body>
+
+</html>
