@@ -1,5 +1,7 @@
 window.search_indexes=null;
 window.index_data=null;
+hljs.initHighlightingOnLoad();
+
 $(function () {
     $('#main-menu').metisMenu({ toggle: true}); 
 
@@ -35,5 +37,4 @@ $(function () {
     $('#mkdocs-search-query').on("blur",function(){
          $('#mkdocs-search-query').popover('hide') 
     });
-    hljs.initHighlightingOnLoad();
 });
