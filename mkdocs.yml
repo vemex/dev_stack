@@ -26,3 +26,6 @@ pages:
 
 plugins:
     - search
+
+markdown_extensions:
+    - smarty

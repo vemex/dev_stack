@@ -1,5 +1,7 @@
+{% import "partials/language.html" as lang with context %}
+
 <!DOCTYPE html>
-<html>
+<html lang="{{ lang.t('language') }}" >
 
 <head>
     <meta charset="utf-8">
@@ -7,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/main.43fe2ee2b2e728c274f2.css' | url }}" />
     <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/metisMenu.css' | url }}" />
     <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/theme.css' | url }}" />
+    <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/darkula.css' | url }}" />
 
 </head>
 
@@ -26,7 +29,7 @@
                     </div>
                     <div data-v-a870e5a8="" class="right-container">
                         <div  class="dropdown p-2">
-                                <input type="text" id="searchbox" placeholder="搜索" class="form-control">
+                                <input type="text" id="mkdocs-search-query" placeholder="搜索" class="form-control">
                         </div> 
                     </div>
                 </div>
@@ -66,11 +69,18 @@
             </div>
         </footer>
     </div>
+    <script>
+     var base_url = '{{ base_url  }}',
+                shortcuts = '{{ config.theme.shortcuts }}';
+    </script>
     <script src="{{ 'assets/javascripts/jquery.min.js' | url }}"></script>
     <script src="{{ 'assets/javascripts/popper.min.js' | url }}"></script>
     <script src="{{ 'assets/javascripts/bootstrap.min.js' | url }}"></script>
     <script src="{{ 'assets/javascripts/metisMenu.js' | url }}"></script>
-    <script src="{{ 'assets/javascripts/lunr.js' | url }}"></script>
+    <script src="{{ 'assets/javascripts/highlight.pack.js' | url }}"></script>
+    <script src="{{ 'search/lunr.js' | url }}"></script>
+    <script src="{{ 'search/worker.js' | url }}"></script>
+    <script src="{{ 'search/main.js' | url }}"></script>
     <script src="{{ 'assets/javascripts/theme.js' | url }}"></script>
 </body>
 

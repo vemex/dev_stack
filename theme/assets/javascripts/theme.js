@@ -24,17 +24,16 @@ $(function () {
         // do something…
       })
 
-    $('#searchbox').popover({html:true,title:"查询结果",trigger:"manual",placement:"bottom",template:'<div class="popover search_result" role="tooltip"><div class="arrow"></div><h3 class="popover-header"><lable></lable></h3><div class="popover-body" id="seach_result"></div></div>'})
-    $('#searchbox').on("input propertychange",function(e){ 
-       $('#seach_result').empty();
-       $("<div>"+$("#searchbox").val()+'</div>').appendTo($('#seach_result'));
-    });
-    $('#searchbox').on("focus",function(){
+    $('#mkdocs-search-query').popover({html:true,title:"查询结果",trigger:"manual",content:'<div></div>',placement:"bottom",template:'<div class="popover search_result" role="tooltip"><div class="arrow"></div><h3 class="popover-header"><lable></lable></h3><div class="popover-body" id="mkdocs-search-results"></div></div>'})
+    // $('#searchbox').on("input propertychange",function(e){  
+    // });
+    $('#mkdocs-search-query').on("focus",function(){
         
-       $("<div>"+$("#searchbox").val()+'</div>').appendTo($('#seach_result'));
-        $('#searchbox').popover('show')
+       //$("<div>"+$("#searchbox").val()+'</div>').appendTo($('#seach_result'));
+        $('#mkdocs-search-query').popover('show')
     });
-    $('#searchbox').on("blur",function(){
-         $('#searchbox').popover('hide') 
-    })
+    $('#mkdocs-search-query').on("blur",function(){
+         $('#mkdocs-search-query').popover('hide') 
+    });
+    hljs.initHighlightingOnLoad();
 });
