@@ -9,7 +9,7 @@ install:
 before_script: 
   - chmod +x ci/build.sh
 script:  
-  - ./CI/build.sh
+  - ./ci/build.sh
 branches:
   only:
   - master
