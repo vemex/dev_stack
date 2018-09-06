@@ -1,5 +1,7 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="zh" >
 
 <head>
     <meta charset="utf-8">
@@ -7,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/main.43fe2ee2b2e728c274f2.css" />
     <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/metisMenu.css" />
     <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/darkula.css" />
 
 </head>
 
@@ -26,7 +29,7 @@
                     </div>
                     <div data-v-a870e5a8="" class="right-container">
                         <div  class="dropdown p-2">
-                                <input type="text" id="searchbox" placeholder="搜索" class="form-control">
+                                <input type="text" id="mkdocs-search-query" placeholder="搜索" class="form-control">
                         </div> 
                     </div>
                 </div>
@@ -339,7 +342,7 @@
 </div>
 <p><a href="http://www.runoob.com/git/git-branch.html">原文链接</a></p>
 <p>几乎每一种版本控制系统都以某种形式支持分支。使用分支意味着你可以从开发主线上分离开来，然后在不影响主线的同时继续工作。
-有人把 Git 的分支模型称为"必杀技特性"，而正是因为它，将 Git 从版本控制系统家族里区分出来。
+有人把 Git 的分支模型称为&rdquo;必杀技特性&rdquo;，而正是因为它，将 Git 从版本控制系统家族里区分出来。
 创建分支命令：</p>
 <blockquote>
 <p>git branch (branchname)  </p>
@@ -365,8 +368,8 @@
 <p>$ git branch<br />
 * master  </p>
 </blockquote>
-<p>此例的意思就是，我们有一个叫做"master"的分支，并且该分支是当前分支。
-当你执行 git init 的时候，缺省情况下 Git 就会为你创建"master"分支。
+<p>此例的意思就是，我们有一个叫做&rdquo;master&rdquo;的分支，并且该分支是当前分支。
+当你执行 git init 的时候，缺省情况下 Git 就会为你创建&rdquo;master&rdquo;分支。
 如果我们要手动创建一个分支。执行 git branch (branchname) 即可。</p>
 <blockquote>
 <p>$ git branch testing  <br />
@@ -376,14 +379,14 @@ $ git branch  <br />
 </blockquote>
 <p>现在我们可以看到，有了一个新分支 testing。</p>
 <h4 id="_2">切换分支</h4>
-<p>当你以此方式在上次提交更新之后创建了新分支，如果后来又有更新提交， 然后又切换到了"testing"分支，Git 将还原你的工作目录到你创建分支时候的样子
+<p>当你以此方式在上次提交更新之后创建了新分支，如果后来又有更新提交， 然后又切换到了&rdquo;testing&rdquo;分支，Git 将还原你的工作目录到你创建分支时候的样子
 接下来我们将演示如何切换分支，我们用 git checkout (branch) 切换到我们要修改的分支。</p>
 <blockquote>
 <p>$ ls<br />
 README<br />
-$ echo 'runoob.com' &gt; test.txt  <br />
+$ echo &lsquo;runoob.com&rsquo; &gt; test.txt  <br />
 $ git add .  <br />
-$ git commit -m 'add test.txt'  <br />
+$ git commit -m &lsquo;add test.txt&rsquo;  <br />
 [master 048598f] add test.txt  <br />
 2 files changed, 1 insertion(+), 3 deletions(-)  <br />
 delete mode 100644 hello.php   <br />
@@ -391,31 +394,31 @@ create mode 100644 test.txt  <br />
 $ ls  <br />
 README     test.txt  <br />
 $ git checkout testing  <br />
-Switched to branch 'testing'  <br />
+Switched to branch &lsquo;testing&rsquo;  <br />
 $ ls  <br />
 README     hello.php    </p>
 </blockquote>
-<p>当我们切换到"testing"分支的时候，我们添加的新文件test.txt被移除了, 原来被删除的文件hello.php文件又出现了。切换回"master"分支的时候，它们有重新出现了。</p>
+<p>当我们切换到&rdquo;testing&rdquo;分支的时候，我们添加的新文件test.txt被移除了, 原来被删除的文件hello.php文件又出现了。切换回&rdquo;master&rdquo;分支的时候，它们有重新出现了。</p>
 <blockquote>
 <p>$ git checkout master<br />
-Switched to branch 'master'<br />
+Switched to branch &lsquo;master&rsquo;<br />
 $ ls<br />
 README     test.txt  </p>
 </blockquote>
 <p>我们也可以使用 git checkout -b (branchname) 命令来创建新分支并立即切换到该分支下，从而在该分支中操作。</p>
 <blockquote>
 <p>$ git checkout -b newtest<br />
-Switched to a new branch 'newtest'<br />
+Switched to a new branch &lsquo;newtest&rsquo;<br />
 $ git rm test2.txt <br />
-rm 'test2.txt'<br />
+rm &lsquo;test2.txt&rsquo;<br />
 $ ls<br />
 README     test.txt<br />
-$ git commit -am 'removed test2.txt'<br />
+$ git commit -am &lsquo;removed test2.txt&rsquo;<br />
 [newtest 556f0a0] removed test2.txt<br />
 1 file changed, 1 deletion(-)<br />
 delete mode 100644 test2.txt<br />
 $ git checkout master<br />
-Switched to branch 'master'<br />
+Switched to branch &lsquo;master&rsquo;<br />
 $ ls<br />
 README     test.txt    test2.txt  </p>
 </blockquote>
@@ -426,7 +429,7 @@ README     test.txt    test2.txt  </p>
 <blockquote>
 <p>git branch -d (branchname)    </p>
 </blockquote>
-<p>例如我们要删除"testing"分支：</p>
+<p>例如我们要删除&rdquo;testing&rdquo;分支：</p>
 <blockquote>
 <p>$ git branch<br />
 <em> master  <br />
@@ -463,21 +466,21 @@ README     test.txt    </p>
  $ cat test.txt  <br />
  runoob.com    </p>
 </blockquote>
-<p>首先，我们创建一个叫做"change_site"的分支，切换过去，我们将内容改为 www.runoob.com 。</p>
+<p>首先，我们创建一个叫做&rdquo;change_site&rdquo;的分支，切换过去，我们将内容改为 www.runoob.com 。</p>
 <blockquote>
 <p>$ git checkout -b change_site  <br />
-Switched to a new branch 'change_site'  <br />
+Switched to a new branch &lsquo;change_site&rsquo;  <br />
 $ vim test.txt   <br />
 $ head -1 test.txt   <br />
 www.runoob.com  <br />
-$ git commit -am 'changed the site'  <br />
+$ git commit -am &lsquo;changed the site&rsquo;  <br />
 [change_site d7e7346] changed the site  <br />
 1 file changed, 1 insertion(+), 1 deletion(-)    </p>
 </blockquote>
-<p>将修改的内容提交到 "change_site" 分支中。 现在，假如切换回 "master" 分支我们可以看内容恢复到我们修改前的，我们再次修改test.txt文件。</p>
+<p>将修改的内容提交到 &ldquo;change_site&rdquo; 分支中。 现在，假如切换回 &ldquo;master&rdquo; 分支我们可以看内容恢复到我们修改前的，我们再次修改test.txt文件。</p>
 <blockquote>
 <p>$ git checkout master  <br />
-Switched to branch 'master'  <br />
+Switched to branch &lsquo;master&rsquo;  <br />
 $head -1 test.txt  <br />
 www.runoob.com  <br />
 $ vim test.txt  <br />
@@ -485,18 +488,18 @@ $ cat test.txt  <br />
 runoob.com  <br />
 新增加一行  <br />
 $ git diff   <br />
-diff --git a/test.txt b/test.txt  <br />
+diff &ndash;git a/test.txt b/test.txt  <br />
 index 704cce7..f84c2a4 100644  <br />
---- a/test.txt    <br />
+-&ndash; a/test.txt    <br />
 +++ b/test.txt  <br />
 @@ -1 +1,2 @@  <br />
 runoob.com  <br />
 +新增加一行  <br />
-$ git commit -am '新增加一行'  <br />
+$ git commit -am &lsquo;新增加一行&rsquo;  <br />
 [master 14b4dca] 新增加一行  <br />
 1 file changed, 1 insertion(+)    </p>
 </blockquote>
-<p>现在这些改变已经记录到我的 "master" 分支了。接下来我们将 "change_site" 分支合并过来。</p>
+<p>现在这些改变已经记录到我的 &ldquo;master&rdquo; 分支了。接下来我们将 &ldquo;change_site&rdquo; 分支合并过来。</p>
 <blockquote>
 <p>$ git merge change_site  <br />
 Auto-merging test.txt  <br />
@@ -510,16 +513,16 @@ $ cat test.txt   <br />
     www.runoob.com  <br />
     >&gt;&gt;&gt;&gt;&gt;&gt; change_site    </p>
 </blockquote>
-<p>我们将前一个分支合并到 "master" 分支，一个合并冲突就出现了，接下来我们需要手动去修改它。</p>
+<p>我们将前一个分支合并到 &ldquo;master&rdquo; 分支，一个合并冲突就出现了，接下来我们需要手动去修改它。</p>
 <blockquote>
 <p>$ vim test.txt   <br />
 $ cat test.txt   <br />
 www.runoob.com  <br />
 新增加一行  <br />
 $ git diff  <br />
-diff --cc test.txt  <br />
+diff &ndash;cc test.txt  <br />
 index f84c2a4,bccb7c2..0000000  <br />
---- a/test.txt  <br />
+-&ndash; a/test.txt  <br />
 +++ b/test.txt  <br />
 @@@ -1,2 -1,1 +1,2 @@@  <br />
 - runoob.com  <br />
@@ -534,7 +537,7 @@ $ git add test.txt   <br />
 $ git status -s  <br />
 M  test.txt  <br />
 $ git commit  <br />
-[master 88afe0e] Merge branch 'change_site'  <br />
+[master 88afe0e] Merge branch &lsquo;change_site&rsquo;  <br />
 现在我们成功解决了合并中的冲突，并提交了结果。  </p>
 </blockquote>
                             </div>
@@ -626,11 +629,18 @@ $ git commit  <br />
             </div>
         </footer>
     </div>
+    <script>
+     var base_url = '../..',
+                shortcuts = '';
+    </script>
     <script src="../../assets/javascripts/jquery.min.js"></script>
     <script src="../../assets/javascripts/popper.min.js"></script>
     <script src="../../assets/javascripts/bootstrap.min.js"></script>
     <script src="../../assets/javascripts/metisMenu.js"></script>
-    <script src="../../assets/javascripts/lunr.js"></script>
+    <script src="../../assets/javascripts/highlight.pack.js"></script>
+    <script src="../../search/lunr.js"></script>
+    <script src="../../search/worker.js"></script>
+    <script src="../../search/main.js"></script>
     <script src="../../assets/javascripts/theme.js"></script>
 </body>
 

@@ -1,5 +1,7 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="zh" >
 
 <head>
     <meta charset="utf-8">
@@ -7,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/main.43fe2ee2b2e728c274f2.css" />
     <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/metisMenu.css" />
     <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/darkula.css" />
 
 </head>
 
@@ -26,7 +29,7 @@
                     </div>
                     <div data-v-a870e5a8="" class="right-container">
                         <div  class="dropdown p-2">
-                                <input type="text" id="searchbox" placeholder="搜索" class="form-control">
+                                <input type="text" id="mkdocs-search-query" placeholder="搜索" class="form-control">
                         </div> 
                     </div>
                 </div>
@@ -386,7 +389,7 @@ Date:   Sun Mar 1 15:03:42 2015 +0800
 </code></pre>
 
 <h3 id="12-git-log-oneline">1.2 git log —oneline</h3>
-<p>我们可以用 --oneline 选项来查看历史记录的简洁的版本。</p>
+<p>我们可以用 &ndash;oneline 选项来查看历史记录的简洁的版本。</p>
 <pre><code class="shell">$ git log --oneline  
 88afe0e Merge branch 'change_site'  
 14b4dca 新增加一行  
@@ -399,7 +402,7 @@ d7e7346 changed the site
 
 <p>这告诉我们的是，此项目的开发历史。</p>
 <h3 id="13-git-log">1.3 git log 图形显示</h3>
-<p>我们还可以用 --graph 选项，查看历史中什么时候出现了分支、合并。以下为相同的命令，开启了拓扑图选项：</p>
+<p>我们还可以用 &ndash;graph 选项，查看历史中什么时候出现了分支、合并。以下为相同的命令，开启了拓扑图选项：</p>
 <pre><code class="shell">$ git log --oneline --graph  
 *   88afe0e Merge branch 'change_site'  
 |\  
@@ -413,7 +416,7 @@ d7e7346 changed the site
 </code></pre>
 
 <p>现在我们可以更清楚明了地看到何时工作分叉、又何时归并。
-你也可以用 '--reverse'参数来逆向显示所有日志。</p>
+你也可以用 &lsquo;&ndash;reverse&rsquo;参数来逆向显示所有日志。</p>
 <pre><code class="shell">$ git log --reverse --oneline  
 85fc7e7 test comment from w3cschool
 048598f add test.txt  
@@ -425,7 +428,7 @@ d7e7346 changed the site
 </code></pre>
 
 <h3 id="14-git-log">1.4 git log 作者查询</h3>
-<p>如果只想查找指定用户的提交日志可以使用命令：git log --author , 例如，比方说我们要找 Git 源码中 Linus 提交的部分：</p>
+<p>如果只想查找指定用户的提交日志可以使用命令：git log &ndash;author , 例如，比方说我们要找 Git 源码中 Linus 提交的部分：</p>
 <pre><code class="shell">$ git log --author=Linus --oneline -5  
 81b50f3 Move 'builtin-*' into a 'builtin/' subdirectory 
 3bb7256 make &quot;index-pack&quot; a built-in  
@@ -435,8 +438,8 @@ b532581 make &quot;git unpack-file&quot; a built-in
 </code></pre>
 
 <h3 id="15-git-log">1.5 git log 时间查询</h3>
-<p>如果你要指定日期，可以执行几个选项：--since 和 --before，但是你也可以用 --until 和 --after。
-例如，如果我要看 Git 项目中三周前且在四月十八日之后的所有提交，我可以执行这个（我还用了 --no-merges 选项以隐藏合并提交）：</p>
+<p>如果你要指定日期，可以执行几个选项：&ndash;since 和 &ndash;before，但是你也可以用 &ndash;until 和 &ndash;after。
+例如，如果我要看 Git 项目中三周前且在四月十八日之后的所有提交，我可以执行这个（我还用了 &ndash;no-merges 选项以隐藏合并提交）：</p>
 <pre><code class="shell">$ git log --oneline --before={3.weeks.ago} --after={2010-04-18} --no-merges
 5469e2d Git 1.7.1-rc2  
 d43427d Documentation/remote-helpers: Fix typos and improve language      
@@ -850,11 +853,18 @@ $git merge upstream/dev
             </div>
         </footer>
     </div>
+    <script>
+     var base_url = '../..',
+                shortcuts = '';
+    </script>
     <script src="../../assets/javascripts/jquery.min.js"></script>
     <script src="../../assets/javascripts/popper.min.js"></script>
     <script src="../../assets/javascripts/bootstrap.min.js"></script>
     <script src="../../assets/javascripts/metisMenu.js"></script>
-    <script src="../../assets/javascripts/lunr.js"></script>
+    <script src="../../assets/javascripts/highlight.pack.js"></script>
+    <script src="../../search/lunr.js"></script>
+    <script src="../../search/worker.js"></script>
+    <script src="../../search/main.js"></script>
     <script src="../../assets/javascripts/theme.js"></script>
 </body>
 

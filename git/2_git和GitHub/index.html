@@ -1,5 +1,7 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="zh" >
 
 <head>
     <meta charset="utf-8">
@@ -7,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/main.43fe2ee2b2e728c274f2.css" />
     <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/metisMenu.css" />
     <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/darkula.css" />
 
 </head>
 
@@ -26,7 +29,7 @@
                     </div>
                     <div data-v-a870e5a8="" class="right-container">
                         <div  class="dropdown p-2">
-                                <input type="text" id="searchbox" placeholder="搜索" class="form-control">
+                                <input type="text" id="mkdocs-search-query" placeholder="搜索" class="form-control">
                         </div> 
                     </div>
                 </div>
@@ -354,7 +357,7 @@
 由于你的本地Git仓库和GitHub仓库之间的传输是通过SSH加密的，所以我们需要配置验证信息：
 使用以下命令生成SSH Key：</p>
 <blockquote>
-<p>$ ssh-keygen -t rsa -C "youremail@example.com"</p>
+<p>$ ssh-keygen -t rsa -C &ldquo;youremail@example.com&rdquo;</p>
 </blockquote>
 <p>后面的 your_email@youremail.com 改为你在 github 上注册的邮箱，之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。成功的话会在~/下生成.ssh文件夹，进去，打开 id_rsa.pub，复制里面的 key。
 回到 github 上，进入 Account =&gt; Settings（账户配置）。
@@ -365,12 +368,12 @@
 <p>为了验证是否成功，输入以下命令：</p>
 <blockquote>
 <p>$ ssh -T git@github.com
-Hi tianqixin! You've successfully authenticated, but GitHub does not provide shell access.</p>
+Hi tianqixin! You&rsquo;ve successfully authenticated, but GitHub does not provide shell access.</p>
 </blockquote>
 <p>以下命令说明我们已成功连上 Github。
-之后登录后点击" New repository " 如下图所示：
+之后登录后点击&rdquo; New repository &rdquo; 如下图所示：
 <img alt="" src="../images/github-repository.jpg" />
-之后在在Repository name 填入 runoob-git-test(远程仓库名) ，其他保持默认设置，点击"Create repository"按钮，就成功地创建了一个新的Git仓库：
+之后在在Repository name 填入 runoob-git-test(远程仓库名) ，其他保持默认设置，点击&rdquo;Create repository&rdquo;按钮，就成功地创建了一个新的Git仓库：
 <img alt="" src="../images/github-repository2.jpg" />
 创建成功后，显示如下信息：</p>
 <p><img alt="" src="../images/github-repository3.jpg" />
@@ -379,12 +382,12 @@ Hi tianqixin! You've successfully authenticated, but GitHub does not provide she
 <blockquote>
 <p>$ mkdir runoob-git-test                     # 创建测试目录<br />
 $ cd runoob-git-test/                       # 进入测试目录<br />
-$ echo "# 菜鸟教程 Git 测试" &gt;&gt; README.md     # 创建 README.md 文件并写入内容<br />
+$ echo &ldquo;# 菜鸟教程 Git 测试&rdquo; &gt;&gt; README.md     # 创建 README.md 文件并写入内容<br />
 $ ls                                       # 查看目录下的文件<br />
 README<br />
 $ git init                                  # 初始化<br />
 $ git add README.md                         # 添加文件<br />
-$ git commit -m "添加 README.md 文件"        # 提交并备注信息<br />
+$ git commit -m &ldquo;添加 README.md 文件&rdquo;        # 提交并备注信息<br />
 [master (root-commit) 0205aab] 添加 README.md 文件<br />
 1 file changed, 1 insertion(+)
 create mode 100644 README.md</p>
@@ -424,7 +427,7 @@ origin git@github.com:tianqixin/runoob-git-test.git (push)</p>
 </blockquote>
 <p>该命令就是在执行 git fetch 之后紧接着执行 git merge 远程分支到你所在的任意分支。
 假设你配置好了一个远程仓库，并且你想要提取更新的数据，你可以首先执行 git fetch [alias] 告诉 Git 去获取它有你没有的数据，然后你可以执行 git merge [alias]/[branch] 以将服务器上的任何更新（假设有人这时候推送到服务器了）合并到你的当前分支。
-接下来我们在 Github 上点击" README.md" 并在线修改它:
+接下来我们在 Github 上点击&rdquo; README.md&rdquo; 并在线修改它:
 <img alt="" src="../images/github-modify.jpg" />
 然后我们在本地更新修改。</p>
 <blockquote>
@@ -435,7 +438,7 @@ remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0<br />
 Unpacking objects: 100% (3/3), done.<br />
 From github.com:tianqixin/runoob-git-test<br />
   0205aab..febd8ed  master     -&gt; origin/master<br />
-以上信息"0205aab..febd8ed master -&gt; origin/master" 说明 master 分支已被更新，我们可以使用以下命令将更新同步到本地：<br />
+以上信息&rdquo;0205aab..febd8ed master -&gt; origin/master&rdquo; 说明 master 分支已被更新，我们可以使用以下命令将更新同步到本地：<br />
 $ git merge origin/master<br />
 Updating 0205aab..febd8ed<br />
 Fast-forward<br />
@@ -456,7 +459,7 @@ $ cat README.md   </p>
 <blockquote>
 <p>$ touch runoob-test.txt      # 添加文件<br />
 $ git add runoob-test.txt <br />
-$ git commit -m "添加到远程"<br />
+$ git commit -m &ldquo;添加到远程&rdquo;<br />
 master 69e702d] 添加到远程<br />
 1 file changed, 0 insertions(+), 0 deletions(-)<br />
 create mode 100644 runoob-test.txt  </p>
@@ -605,11 +608,18 @@ origin git@github.com:tianqixin/runoob-git-test.git (push)  </p>
             </div>
         </footer>
     </div>
+    <script>
+     var base_url = '../..',
+                shortcuts = '';
+    </script>
     <script src="../../assets/javascripts/jquery.min.js"></script>
     <script src="../../assets/javascripts/popper.min.js"></script>
     <script src="../../assets/javascripts/bootstrap.min.js"></script>
     <script src="../../assets/javascripts/metisMenu.js"></script>
-    <script src="../../assets/javascripts/lunr.js"></script>
+    <script src="../../assets/javascripts/highlight.pack.js"></script>
+    <script src="../../search/lunr.js"></script>
+    <script src="../../search/worker.js"></script>
+    <script src="../../search/main.js"></script>
     <script src="../../assets/javascripts/theme.js"></script>
 </body>
 

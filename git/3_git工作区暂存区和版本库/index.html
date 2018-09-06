@@ -1,5 +1,7 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="zh" >
 
 <head>
     <meta charset="utf-8">
@@ -7,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/main.43fe2ee2b2e728c274f2.css" />
     <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/metisMenu.css" />
     <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/darkula.css" />
 
 </head>
 
@@ -26,7 +29,7 @@
                     </div>
                     <div data-v-a870e5a8="" class="right-container">
                         <div  class="dropdown p-2">
-                                <input type="text" id="searchbox" placeholder="搜索" class="form-control">
+                                <input type="text" id="mkdocs-search-query" placeholder="搜索" class="form-control">
                         </div> 
                     </div>
                 </div>
@@ -334,35 +337,35 @@
 <p>基本概念
 我们先来理解下Git 工作区、暂存区和版本库概念
 <em> <strong>工作区：</strong>就是你在电脑里能看到的目录。
-</em> <strong>暂存区：</strong>英文叫stage, 或index。一般存放在 ".git目录下" 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。
+</em> <strong>暂存区：</strong>英文叫stage, 或index。一般存放在 &ldquo;.git目录下&rdquo; 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。
 * <strong>版本库：</strong> 工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。
   下面这个图展示了工作区、版本库中的暂存区和版本库之间的关系：</p>
 <p><img alt="" src="../images/area.jpg" /></p>
-<p>图中左侧为工作区，右侧为版本库。在版本库中标记为 "index" 的区域是暂存区（stage, index），标记为 "master" 的是 master 分支所代表的目录树。</p>
-<p>图中我们可以看出此时 "HEAD" 实际是指向 master 分支的一个"游标"。所以图示的命令中出现 HEAD 的地方可以用 master 来替换。</p>
-<p>图中的 objects 标识的区域为 Git 的对象库，实际位于 ".git/objects" 目录下，里面包含了创建的各种对象及内容。</p>
+<p>图中左侧为工作区，右侧为版本库。在版本库中标记为 &ldquo;index&rdquo; 的区域是暂存区（stage, index），标记为 &ldquo;master&rdquo; 的是 master 分支所代表的目录树。</p>
+<p>图中我们可以看出此时 &ldquo;HEAD&rdquo; 实际是指向 master 分支的一个&rdquo;游标&rdquo;。所以图示的命令中出现 HEAD 的地方可以用 master 来替换。</p>
+<p>图中的 objects 标识的区域为 Git 的对象库，实际位于 &ldquo;.git/objects&rdquo; 目录下，里面包含了创建的各种对象及内容。</p>
 <h3 id="_1">常见的操作</h3>
 <ol>
 <li>
-<p>当对工作区修改（或新增）的文件执行 "git add" 命令时，暂存区的目录树被更新，同时工作区修改（或新增）的文件内容被写入到对象库中的一个新的对象中，而该对象的ID被记录在暂存区的文件索引中。</p>
+<p>当对工作区修改（或新增）的文件执行 &ldquo;git add&rdquo; 命令时，暂存区的目录树被更新，同时工作区修改（或新增）的文件内容被写入到对象库中的一个新的对象中，而该对象的ID被记录在暂存区的文件索引中。</p>
 </li>
 <li>
 <p>当执行提交操作（git commit）时，暂存区的目录树写到版本库（对象库）中，master 分支会做相应的更新。即 master 指向的目录树就是提交时暂存区的目录树。</p>
 </li>
 <li>
-<p>当执行 "git reset HEAD" 命令时，暂存区的目录树会被重写，被 master 分支指向的目录树所替换，但是工作区不受影响。</p>
+<p>当执行 &ldquo;git reset HEAD&rdquo; 命令时，暂存区的目录树会被重写，被 master 分支指向的目录树所替换，但是工作区不受影响。</p>
 </li>
 <li>
-<p>当执行 "git rm --cached &lt; file &gt;" 命令时，会直接从暂存区删除文件，工作区则不做出改变。</p>
+<p>当执行 &ldquo;git rm &ndash;cached &lt; file &gt;&rdquo; 命令时，会直接从暂存区删除文件，工作区则不做出改变。</p>
 </li>
 <li>
-<p>当执行 "git checkout <strong> . </strong>" 或者 "git checkout - - &lt; file &gt;" 命令时，会用暂存区全部或指定的文件替换工作区的文件。<strong>这个操作很危险</strong>，会清除工作区中未添加到暂存区的改动。</p>
+<p>当执行 &ldquo;git checkout <strong> . </strong>&rdquo; 或者 &ldquo;git checkout - - &lt; file &gt;&rdquo; 命令时，会用暂存区全部或指定的文件替换工作区的文件。<strong>这个操作很危险</strong>，会清除工作区中未添加到暂存区的改动。</p>
 </li>
 <li>
-<p>当执行 "git checkout HEAD <strong> . </strong>" 或者 "git checkout HEAD - - &lt; file &gt;" 命令时，会用 HEAD 指向的 master 分支中的全部或者部分文件替换暂存区和以及工作区中的文件。<strong> 这个命令也是极具危险性的 </strong>，因为不但会清除工作区中未提交的改动，也会清除暂存区中未提交的改</p>
+<p>当执行 &ldquo;git checkout HEAD <strong> . </strong>&rdquo; 或者 &ldquo;git checkout HEAD - - &lt; file &gt;&rdquo; 命令时，会用 HEAD 指向的 master 分支中的全部或者部分文件替换暂存区和以及工作区中的文件。<strong> 这个命令也是极具危险性的 </strong>，因为不但会清除工作区中未提交的改动，也会清除暂存区中未提交的改</p>
 </li>
 <li>
-<p>当执行“git checkout”时，汇总显示工作区域，暂存区与HEAD的差异，这个命令等同于“git checkout HEAD”,与第5，6差异在于一个"."或“--”</p>
+<p>当执行“git checkout”时，汇总显示工作区域，暂存区与HEAD的差异，这个命令等同于“git checkout HEAD”,与第5，6差异在于一个&rdquo;.&rdquo;或“&ndash;”</p>
 </li>
 </ol>
 <p>下面2张图可以直观的帮助你理解：
@@ -416,11 +419,18 @@
             </div>
         </footer>
     </div>
+    <script>
+     var base_url = '../..',
+                shortcuts = '';
+    </script>
     <script src="../../assets/javascripts/jquery.min.js"></script>
     <script src="../../assets/javascripts/popper.min.js"></script>
     <script src="../../assets/javascripts/bootstrap.min.js"></script>
     <script src="../../assets/javascripts/metisMenu.js"></script>
-    <script src="../../assets/javascripts/lunr.js"></script>
+    <script src="../../assets/javascripts/highlight.pack.js"></script>
+    <script src="../../search/lunr.js"></script>
+    <script src="../../search/worker.js"></script>
+    <script src="../../search/main.js"></script>
     <script src="../../assets/javascripts/theme.js"></script>
 </body>
 

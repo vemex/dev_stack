@@ -52,15 +52,19 @@
     background: white;
 }
 
-blockquote{    
+/* blockquote{    
     background-color: #f5f5f5;
     border-radius: 0.5rem;
     padding-top: 1rem;
     padding-bottom: 0.5rem;
     padding-left: 0.5rem;
-}
+} */
 
 .search_result {
     width: 800px;
     max-width: none;
+}
+#mkdocs-search-results{
+    max-height: 600px;
+    overflow: auto;
 }

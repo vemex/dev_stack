@@ -1,5 +1,7 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="zh" >
 
 <head>
     <meta charset="utf-8">
@@ -7,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/main.43fe2ee2b2e728c274f2.css" />
     <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/metisMenu.css" />
     <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/darkula.css" />
 
 </head>
 
@@ -26,7 +29,7 @@
                     </div>
                     <div data-v-a870e5a8="" class="right-container">
                         <div  class="dropdown p-2">
-                                <input type="text" id="searchbox" placeholder="搜索" class="form-control">
+                                <input type="text" id="mkdocs-search-query" placeholder="搜索" class="form-control">
                         </div> 
                     </div>
                 </div>
@@ -325,16 +328,16 @@
 <p>[toc]</p>
 <p><a href="http://www.runoob.com/git/git-tag.html">原文链接</a></p>
 <p>如果你达到一个重要的阶段，并希望永远记住那个特别的提交快照，你可以使用 git tag 给它打上标签。
-比如说，我们想为我们的 w3cschoolcc 项目发布一个"1.0"版本。 我们可以用 git tag -a v1.0 命令给最新一次提交打上（HEAD）"v1.0"的标签。
--a 选项意为"创建一个带注解的标签"。 不用 -a 选项也可以执行的，但它不会记录这标签是啥时候打的，谁打的，也不会让你添加个标签的注解。 我推荐一直创建带注解的标签。</p>
+比如说，我们想为我们的 w3cschoolcc 项目发布一个&rdquo;1.0&rdquo;版本。 我们可以用 git tag -a v1.0 命令给最新一次提交打上（HEAD）&rdquo;v1.0&rdquo;的标签。
+-a 选项意为&rdquo;创建一个带注解的标签&rdquo;。 不用 -a 选项也可以执行的，但它不会记录这标签是啥时候打的，谁打的，也不会让你添加个标签的注解。 我推荐一直创建带注解的标签。</p>
 <blockquote>
 <p>$ git tag -a v1.0 </p>
 </blockquote>
 <p>当你执行 git tag -a 命令时，Git 会打开你的编辑器，让你写一句标签注解，就像你给提交写注解一样。
-现在，注意当我们执行 git log --decorate 时，我们可以看到我们的标签了：</p>
+现在，注意当我们执行 git log &ndash;decorate 时，我们可以看到我们的标签了：</p>
 <blockquote>
-<p>$ git log --oneline --decorate --graph<br />
-<em>   88afe0e (HEAD, tag: v1.0, master) Merge branch 'change_site'  <br />
+<p>$ git log &ndash;oneline &ndash;decorate &ndash;graph<br />
+<em>   88afe0e (HEAD, tag: v1.0, master) Merge branch &lsquo;change_site&rsquo;  <br />
   |\  <br />
   | * d7e7346 (change_site) changed the site  <br />
 </em>   | 14b4dca 新增加一行<br />
@@ -348,8 +351,8 @@
 例如，假设我们发布了提交 85fc7e7(上面实例最后一行)，但是那时候忘了给它打标签。 我们现在也可以：</p>
 <blockquote>
 <p>$ git tag -a v0.9 85fc7e7<br />
-$ git log --oneline --decorate --graph<br />
-<em>   88afe0e (HEAD, tag: v1.0, master) Merge branch 'change_site'  <br />
+$ git log &ndash;oneline &ndash;decorate &ndash;graph<br />
+<em>   88afe0e (HEAD, tag: v1.0, master) Merge branch &lsquo;change_site&rsquo;  <br />
   |\  <br />
   | * d7e7346 (change_site) changed the site<br />
 </em>   | 14b4dca 新增加一行<br />
@@ -367,11 +370,11 @@ v1.0  </p>
 </blockquote>
 <p>指定标签信息命令：</p>
 <blockquote>
-<p>git tag -a <tagname> -m "w3cschool.cc标签"</p>
+<p>git tag -a <tagname> -m &ldquo;w3cschool.cc标签&rdquo;</p>
 </blockquote>
 <p>PGP签名标签命令：</p>
 <blockquote>
-<p>git tag -s <tagname> -m "w3cschool.cc标签"</p>
+<p>git tag -s <tagname> -m &ldquo;w3cschool.cc标签&rdquo;</p>
 </blockquote>
                             </div>
                         </div>
@@ -408,11 +411,18 @@ v1.0  </p>
             </div>
         </footer>
     </div>
+    <script>
+     var base_url = '../..',
+                shortcuts = '';
+    </script>
     <script src="../../assets/javascripts/jquery.min.js"></script>
     <script src="../../assets/javascripts/popper.min.js"></script>
     <script src="../../assets/javascripts/bootstrap.min.js"></script>
     <script src="../../assets/javascripts/metisMenu.js"></script>
-    <script src="../../assets/javascripts/lunr.js"></script>
+    <script src="../../assets/javascripts/highlight.pack.js"></script>
+    <script src="../../search/lunr.js"></script>
+    <script src="../../search/worker.js"></script>
+    <script src="../../search/main.js"></script>
     <script src="../../assets/javascripts/theme.js"></script>
 </body>
 
