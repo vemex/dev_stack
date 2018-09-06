@@ -1,0 +1,29 @@
+language: python
+sudo: false
+
+# Python, Node.js version and necessary services
+python: "3.6"
+before_install:
+install: 
+  -  pip install mkdocs
+before_script: 
+  - chmod +x ci/build.sh
+script:  
+  - ./CI/build.sh
+branches:
+  only:
+  - master
+addons:
+  sonarcloud:
+    organization: "vivlanwong-github"
+    token: "a02ab512a26e3861ed7c53afe31748da0fd80670"
+
+env:
+   global:
+     - GH_REF: github.com/vemex/dev_stack.git
+
+
+cache:
+  pip: true
+  directories:
+    - node_modules
