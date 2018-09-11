@@ -3,6 +3,14 @@ window.index_data=null;
 hljs.initHighlightingOnLoad();
 
 $(function () {
+    var htmlWidth=$('html').css('width');
+    htmlWidth= htmlWidth.substr(0,htmlWidth.length-2);
+    if(Number.parseInt(htmlWidth)>1440){
+        $('html').css({'font-size':'14px'})
+    }else{
+        $('html').css({'font-size':'12px'})
+    }
+    
     $('#main-menu').metisMenu({ toggle: true}); 
 
     // $.getJSON("/search/search_index.json", function(data){
@@ -34,8 +42,20 @@ $(function () {
        //$("<div>"+$("#searchbox").val()+'</div>').appendTo($('#seach_result'));
         $('#mkdocs-search-query').popover('show')
     });
+
+    $('#btn-set-big').on('click',function(){
+        $('html').css({'font-size':'16px'})
+
+    });    
+    $('#btn-set-normal').on('click',function(){
+        $('html').css({'font-size':'14px'})
+
+    });
+    $('#btn-set-small').on('click',function(){
+            $('html').css({'font-size':'12px'})
+    });
     $('#mkdocs-search-query').on("blur",function(){
-        var div = document.getElementById("search_result");
+        var div = document.getElementById("mkdocs-search-results");
         var x=event.clientX;
         var y=event.clientY;
         var divx1 = div.offsetLeft;

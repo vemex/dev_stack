@@ -1,7 +1,7 @@
 {% import "partials/language.html" as lang with context %}
 
 <!DOCTYPE html>
-<html lang="{{ lang.t('language') }}" >
+<html lang="{{ lang.t('language') }}">
 
 <head>
     <meta charset="utf-8">
@@ -18,35 +18,45 @@
         <header>
             <div class="aside-header">
                 <div>
-                    <label class="text-light text-lg-center p-2"><h2> <a class="text-light text-lg-center p-2" href="{{ config.site_url | default(nav.homepage.url, true) | url }}" >{{ config.site_name }}</a></h2></label> 
+                    <label class="text-light text-lg-center p-2"><h2> <a class="text-light text-lg-center p-2" href="{{ config.site_url | default(nav.homepage.url, true) | url }}">{{
+                                config.site_name }}</a></h2></label>
                 </div>
             </div>
             <div class="header-bar">
-                <div data-v-a870e5a8="" class="d-flex justify-content-between">
-                        
-                    <div data-v-a870e5a8="" class="left-container">
-                      
+                <div  class="d-flex justify-content-between">
+
+                    <div class="left-container">
+
                     </div>
-                    <div data-v-a870e5a8="" class="right-container">
-                        <div  class="dropdown p-2">
-                                <input type="text" id="mkdocs-search-query" placeholder="搜索" class="form-control">
-                        </div> 
+                    <div class="right-container"> 
+                        <div>
+                            <button id="btn-set-big">大</button>
+                        </div>
+                        <div>
+                            <button id="btn-set-normal">中</button>
+                        </div>
+                        <div>
+                            <button id="btn-set-small">小</button>
+                        </div>
+                        <div class="dropdown p-2">
+                            <input type="text" id="mkdocs-search-query" placeholder="搜索" class="form-control">
+                        </div>
                     </div>
                 </div>
             </div>
         </header>
         <div class="dashboard-body">
             <div class="aside-left" id="aside_left">
-                    {% include "partials/nav.html" %}
+                {% include "partials/nav.html" %}
             </div>
             <main class="page">
                 <div class="page-title">
-                    <div class="breadcrumb"> <b>文章标题:&nbsp;&nbsp;&nbsp;&nbsp;  </b>{{ page.title }}</div>
+                    <div class="breadcrumb"> <b>文章标题:&nbsp;&nbsp;&nbsp;&nbsp; </b>{{ page.title }}</div>
                 </div>
                 <div class="page-content">
                     <div class="page-content-body">
                         <div class="page-content-body-scrollwrap">
-                            <div> 
+                            <div>
                                 {{ page.content }}
                             </div>
                         </div>
@@ -70,8 +80,8 @@
         </footer>
     </div>
     <script>
-     var base_url = '{{ base_url  }}',
-                shortcuts = '{{ config.theme.shortcuts }}';
+        var base_url = '{{ base_url  }}',
+            shortcuts = '{{ config.theme.shortcuts }}';
     </script>
     <script src="{{ 'assets/javascripts/jquery.min.js' | url }}"></script>
     <script src="{{ 'assets/javascripts/popper.min.js' | url }}"></script>
