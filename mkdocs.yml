@@ -11,6 +11,8 @@ theme:
 pages:
   - Welcome: index.md 
   - Git: 
+    - Git介绍: "git/0_GIT介绍.md"
+    - 1.创建版本库: "git/1_创建版本库.md"
     - 1_CentOS7中安装git: "git/1_CentOS7中安装git.md"
     - 2_git和GitHub: "git/2_git和GitHub.md"
     - 3_git工作区暂存区和版本库: "git/3_git工作区暂存区和版本库.md"
