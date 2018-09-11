@@ -41,6 +41,7 @@ function onJSONLoaded () {
   }
   if (lang.length > 1 || lang[0] !== "en") {
     scriptsToLoad.push('lunr.stemmer.support.js');
+	  scriptsToLoad.push('tinyseg.js');
     if (lang.length > 1) {
       scriptsToLoad.push('lunr.multi.js');
     }
