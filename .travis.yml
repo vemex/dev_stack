@@ -5,10 +5,11 @@ sudo: false
 python: "3.6"
 before_install:
 install: 
-  -  pip install mkdocs
+  -  pip install mkdocs 
 before_script: 
   - chmod +x ci/build.sh
 script:  
+  - ./ci/install.sh
   - ./ci/build.sh
 branches:
   only:

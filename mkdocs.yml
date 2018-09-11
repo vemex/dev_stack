@@ -1,5 +1,7 @@
 site_name: 'Devs Stack' 
+lang: zh
 theme:
+  lang: zh
   language: zh
   name: null
   custom_dir: 'theme/'
@@ -25,7 +27,8 @@ pages:
     - 概要: "svn/index.md"
 
 plugins:
-    - search
+    - search: 
+        lang: ['en','jp']
 
 markdown_extensions:
     - smarty
