@@ -5,22 +5,22 @@ hljs.initHighlightingOnLoad();
 $(function () {
     $('#main-menu').metisMenu({ toggle: true}); 
 
-    $.getJSON("/search/search_index.json", function(data){
-        if (data != null){
-            window.index_data=data.docs;
-            window.search_indexes = lunr(function () {
+    // $.getJSON("/search/search_index.json", function(data){
+    //     if (data != null){
+    //         window.index_data=data.docs;
+    //         window.search_indexes = lunr(function () {
              
-                this.field('title')
-                this.field('body')
-                this.ref('id')
-                for (const key in data.docs) { 
-                        const element = data.docs[key];
-                        this.add({title:element.title,body:element.text,id:element.location}); 
-                } 
-              });
+    //             this.field('title')
+    //             this.field('body')
+    //             this.ref('id')
+    //             for (const key in data.docs) { 
+    //                     const element = data.docs[key];
+    //                     this.add({title:element.title,body:element.text,id:element.location}); 
+    //             } 
+    //           });
              
-        }
-    });
+    //     }
+    // });
 
     $('#searchbox').on('shown.bs.popover', function (e) {
         // do something…
@@ -35,6 +35,16 @@ $(function () {
         $('#mkdocs-search-query').popover('show')
     });
     $('#mkdocs-search-query').on("blur",function(){
+        var div = document.getElementById("search_result");
+        var x=event.clientX;
+        var y=event.clientY;
+        var divx1 = div.offsetLeft;
+        var divy1 = div.offsetTop;
+        var divx2 = div.offsetLeft + div.offsetWidth;
+        var divy2 = div.offsetTop + div.offsetHeight;
+        if( !(x < divx1 || x > divx2 || y < divy1 || y > divy2)){
+            return;
+        }
          $('#mkdocs-search-query').popover('hide') 
     });
 });
